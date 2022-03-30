@@ -5,7 +5,7 @@ public class Main {
 		// TODO Auto-generated method stub
 		TorreControl ezeiza = new TorreControl();
 		
-		ezeiza.
+		
 	}
 
 }
