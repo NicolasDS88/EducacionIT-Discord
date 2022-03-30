@@ -7,6 +7,11 @@ public class PistaAterrizaje {
 		setNombrePista(nombrePista);
 	}
 
+	@Override
+	public String toString() {
+		return "-----> " + nombrePista;
+	}
+
 	public String getNombrePista() {
 		return nombrePista;
 	}

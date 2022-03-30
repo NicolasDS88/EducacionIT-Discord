@@ -27,7 +27,7 @@ public class JetPrivado extends Avion {
 	
 
 	@Override
-	public void quemarCombustible() {
+	public void quemarCombustible(Double quemar) {
 		// TODO Auto-generated method stub
 
 	}
@@ -36,6 +36,18 @@ public class JetPrivado extends Avion {
 	public void recargarCombustible() {
 		// TODO Auto-generated method stub
 		
+	}
+
+	@Override
+	protected void presentate() {
+		// TODO Auto-generated method stub
+		toString();
+	}
+
+	@Override
+	public String toString() {
+		return "Hola torre de contorl, aqui "+ nombrePiloto +" estoy manejando un un Jet Privado con patente " + patente + " de la empresa " + getAerolinea()+" Solicito permiso de aterrizaje";
+				
 	}
 
 }

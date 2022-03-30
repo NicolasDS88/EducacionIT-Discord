@@ -9,6 +9,8 @@ public abstract class Aeronave implements Aterrizable {
 		this.color = color;
 	}
 	
-	public abstract void quemarCombustible();
+	public abstract void quemarCombustible(Double quemando);
 	public abstract void recargarCombustible();
+	protected abstract void presentate();
+	
 }

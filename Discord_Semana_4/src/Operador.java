@@ -5,11 +5,12 @@ public class Operador {
 	private boolean cumpleaniosHoy; // podria hacer algo que si hoy es su cumple no trabaja
 	private String nombre;
 	private String apellido;
-	private String cumpleanios=isCumpleaniosHoy();
+	private String cumpleanios;
 
 	public Operador(String dNI, boolean cumpleaniosHoy, String nombre, String apellido) {
 		DNI = dNI;
 		this.cumpleaniosHoy = cumpleaniosHoy;
+		cumpleanios=isCumpleaniosHoy();
 		this.nombre = nombre;
 		this.apellido = apellido;
 	}
@@ -40,6 +41,14 @@ public class Operador {
 	public String toString() {
 		return "Operador DNI=" + DNI + ", Hoy cumplis Años?=" + cumpleanios + ", Nombre=" + nombre + ", Apellido="
 				+ apellido;
+	}
+	
+	
+
+	public String presentate() {
+		return "Hola soy el Operador "+ nombre + " y mi Apellido es "
+				+ apellido+" en unos momentos te voy a dirigir a una pista.";
+		
 	}
 
 	

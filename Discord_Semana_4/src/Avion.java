@@ -24,6 +24,10 @@ public abstract class Avion extends Aeronave {
 		this.habilitadoAterrizar = habilitadoAterrizar;
 	}
 
+	public void setCombustible(Double combustible) {
+		this.combustible =+ combustible;
+	}
+
 	public int getAsientos() {
 		return asientos;
 	}

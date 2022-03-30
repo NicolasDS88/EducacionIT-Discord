@@ -44,17 +44,31 @@ public class Helicoptero extends Aeronave {
 		// TODO Auto-generated method stub
 
 	}
-
-	@Override
-	public void quemarCombustible() {
-		// TODO Auto-generated method stub
-
-	}
+	
 
 	@Override
 	public void recargarCombustible() {
 		// TODO Auto-generated method stub
 		
 	}
+
+	@Override
+	protected void presentate() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public String toString() {
+		return "Hola torre de control, soy "+ nombrePiloto +"estoy pilotando un helicoptero " + "me queda combustible=" + combustible + "solicito permiso para aterrizar"
+				+ "mi patente es" + patente + "soy de color " + color;
+	}
+
+	@Override
+	public void quemarCombustible(Double quemando) {
+		// TODO Auto-generated method stub
+		
+	}
+	
 
 }

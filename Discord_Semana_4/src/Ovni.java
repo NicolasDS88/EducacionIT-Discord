@@ -22,7 +22,7 @@ public class Ovni extends Aeronave {
 	}
 
 	@Override
-	public void quemarCombustible() {
+	public void quemarCombustible(Double quemar) {
 		// TODO Auto-generated method stub
 		
 	}
@@ -31,6 +31,17 @@ public class Ovni extends Aeronave {
 	public void recargarCombustible() {
 		// TODO Auto-generated method stub
 		
+	}
+
+	@Override
+	protected void presentate() {
+		// TODO Auto-generated method stub
+		toString();
+	}
+
+	@Override
+	public String toString() {
+		return "Ovni objetoNoIdentificado=" + objetoNoIdentificado + ", celdasCombustible=" + celdasCombustible + "vengo en zon de paz";
 	}
 
 }
