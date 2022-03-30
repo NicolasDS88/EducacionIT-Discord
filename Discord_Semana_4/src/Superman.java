@@ -6,7 +6,6 @@ public Superman(String patente, String color) {
 		// TODO Auto-generated constructor stub
 	}
 
-
 	
 	@Override
 	public void aterrizaje() {

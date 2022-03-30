@@ -9,6 +9,9 @@ public class JetPrivado extends Avion {
 		this.nombrePiloto = nombrePiloto;
 	}
 
+	public String getNombrePiloto() {
+		return nombrePiloto;
+	}
 	@Override
 	public void aterrizaje() {
 		// TODO Auto-generated method stub
@@ -20,6 +23,8 @@ public class JetPrivado extends Avion {
 		// TODO Auto-generated method stub
 
 	}
+
+	
 
 	@Override
 	public void quemarCombustible() {

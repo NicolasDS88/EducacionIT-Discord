@@ -1,27 +1,39 @@
 
-public abstract class Avion extends Aeronave  {
+public abstract class Avion extends Aeronave {
 
-	int asientos;
-	 Double combustible;
-	 boolean habilitadoAterrizar;
-	 
-	 String Aerolinea;
-		
-	
+	private final int asientos;
+	private Double combustible;
+	private boolean habilitadoAterrizar;
+	private String Aerolinea;
 
 	public Avion(String patente, String color, int asientos, Double combustible, boolean habilitadoAterrizar,
-			 String aerolinea) {
+			String aerolinea) {
 		super(patente, color);
 		this.asientos = asientos;
 		this.combustible = combustible;
-		this.habilitadoAterrizar = habilitadoAterrizar;		
+		this.habilitadoAterrizar = habilitadoAterrizar;
 		Aerolinea = aerolinea;
-		
+
 	}
-	 
-	
-	
-	
-	
+
+	public boolean isHabilitadoAterrizar() {
+		return habilitadoAterrizar;
+	}
+
+	public void setHabilitadoAterrizar(boolean habilitadoAterrizar) {
+		this.habilitadoAterrizar = habilitadoAterrizar;
+	}
+
+	public int getAsientos() {
+		return asientos;
+	}
+
+	public Double getCombustible() {
+		return combustible;
+	}
+
+	public String getAerolinea() {
+		return Aerolinea;
+	}
 
 }

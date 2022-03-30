@@ -1,8 +1,7 @@
 
-public class Boing extends Avion{
+public class Boing extends Avion {
 
 	String nombrePiloto;
-	
 
 	public Boing(String patente, String color, int asientos, Double combustible, boolean habilitadoAterrizar,
 			String aerolinea, String nombrePiloto) {
@@ -10,25 +9,22 @@ public class Boing extends Avion{
 		this.nombrePiloto = nombrePiloto;
 	}
 
-		
-	
-	
-
 	@Override
 	public void aterrizaje() {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	@Override
 	public void aterrizajeEmergencia() {
 		// TODO Auto-generated method stub
-		
+
 	}
+
 	@Override
 	public void quemarCombustible() {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 }

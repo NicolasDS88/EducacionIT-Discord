@@ -71,10 +71,12 @@ public class TorreControl {
 
 	public void cargarListaAeronaves() {
 		// TODO 
-		//podria hacer algo más elavorado pidiendo que quiero cargar por escaner
-		muchasNaves[0] = new JetPrivado(null, null, CANTIDADPISTAS, null, false, null, null);
-		muchasNaves[1] = new Boing(null, null, CANTIDADPISTAS, null, false, null, null);
-
+		//podria hacer algo más elavorado pidiendo que quiero cargar por escaner	
+		// patente,  color,  asientos,  combustible,  habilitadoAterrizar, aerolinea,  nombrePiloto	
+		muchasNaves[0] = new JetPrivado("SKU-789", "NEGRO", 10, 50.0d, false, "El Rapido", "Ricardo");
+		muchasNaves[1] = new Boing("XIZ-123", "Blanco", 200, 20.0d, false, "Aerolineas Argentinas", "Fede");
+		muchasNaves[2] = new Ovni(null, null, false, CANTIDADPISTAS);
+		muchasNaves[3] = new Superman();
 		//
 	}
 
@@ -84,6 +86,8 @@ public class TorreControl {
 
 	//TODO
 	//esto estaria bueno si fueran listas y no vectores fijo inmutables GG
+	//podria hacer que una vez que aterrizan los saco de la lista y los pongo 
+	//en una nueva llamada AeronavesAterrizadas[]
 	/*public void agregarNave(Aeronave muchasNaves, int pos) {
 		this.muchasNaves[pos] = muchasNaves;
 	}*/
