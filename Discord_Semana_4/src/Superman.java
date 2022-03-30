@@ -25,4 +25,11 @@ public Superman(String patente, String color) {
 		
 	}
 
+
+	@Override
+	public void recargarCombustible() {
+		// TODO Auto-generated method stub
+		
+	}
+
 }

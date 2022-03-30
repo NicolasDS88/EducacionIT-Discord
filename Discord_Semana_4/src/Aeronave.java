@@ -10,5 +10,5 @@ public abstract class Aeronave implements Aterrizable {
 	}
 	
 	public abstract void quemarCombustible();
-	
+	public abstract void recargarCombustible();
 }

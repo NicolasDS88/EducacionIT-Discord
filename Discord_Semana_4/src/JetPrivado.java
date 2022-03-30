@@ -32,4 +32,10 @@ public class JetPrivado extends Avion {
 
 	}
 
+	@Override
+	public void recargarCombustible() {
+		// TODO Auto-generated method stub
+		
+	}
+
 }

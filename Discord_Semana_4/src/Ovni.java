@@ -1,6 +1,6 @@
 
 public class Ovni extends Aeronave {
-	private boolean objetoNoIdentificado=false;
+	private boolean objetoNoIdentificado;
 	private int celdasCombustible;
 	
 
@@ -23,6 +23,12 @@ public class Ovni extends Aeronave {
 
 	@Override
 	public void quemarCombustible() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void recargarCombustible() {
 		// TODO Auto-generated method stub
 		
 	}

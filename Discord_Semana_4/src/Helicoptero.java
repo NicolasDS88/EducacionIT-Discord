@@ -16,6 +16,7 @@ public class Helicoptero extends Aeronave {
 		return combustible;
 	}
 
+	//TODO 	la idea seria que cuando aterrizan carguen combustibles
 	public void setCombustible(Double combustible) {
 		this.combustible = combustible;
 	}
@@ -48,6 +49,12 @@ public class Helicoptero extends Aeronave {
 	public void quemarCombustible() {
 		// TODO Auto-generated method stub
 
+	}
+
+	@Override
+	public void recargarCombustible() {
+		// TODO Auto-generated method stub
+		
 	}
 
 }

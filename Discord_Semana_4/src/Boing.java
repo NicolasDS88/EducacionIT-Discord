@@ -27,4 +27,10 @@ public class Boing extends Avion {
 
 	}
 
+	@Override
+	public void recargarCombustible() {
+		// TODO Auto-generated method stub
+		
+	}
+
 }
