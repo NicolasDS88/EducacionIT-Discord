@@ -76,7 +76,7 @@ public class TorreControl {
 		muchasNaves[0] = new JetPrivado("SKU-789", "NEGRO", 10, 50.0d, false, "El Rapido", "Ricardo");
 		muchasNaves[1] = new Boing("XIZ-123", "Blanco", 200, 20.0d, false, "Aerolineas Argentinas", "Fede");
 		muchasNaves[2] = new Ovni(null, null, false, CANTIDADPISTAS);
-		muchasNaves[3] = new Superman();
+		muchasNaves[3] = new Superman(null, null); //mmmm nose q hacer
 		//
 	}
 
