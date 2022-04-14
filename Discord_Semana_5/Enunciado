@@ -1,12 +1,19 @@
-Enunciado
-Crear un branch con el nombre practica-adicional-semana4 
-La idea es desarrollar un pequeño programa para incorporar los conceptos de 
-clases, atributos, métodos, clases abstractas, interfaces, composición, agregación. 
--Existe una torre de control donde operadores pueden determinar ciertos voladores que 
-pueden aterrizar en la pista de aterrizaje. Los voladores son, avión, helicóptero, 
-Superman, ovni. Los atributos que comparten son: nombre, (agregar otros de ser necesario) 
-Cada volador tiene atributos particulares (decidir los que crean convenientes). 
-Ej: avión puede tener cantidad de asientos, el helicóptero puede tener color, marca, modelo etc. 
-En la pista solo podrán aterrizar aquellos voladores que cumplan con la interfaz Aterrizable. 
-Escribir las clases e interfaces, además de las relaciones de herencias 
-necesarias para poder resolverlo.
+Debido a que tenemos dos dias menos  el ejercicio se entrega el lunes 18/4.
+Buen día chicos.
+
+Les dejo el ejercicio semanal.
+
+Crear un clase CollectionCustom<T>
+La clase tiene un atributo T[] “un array de T” en el cual se deben guardar los tipos una vez creada la implementación.
+
+- debe tener los métodos
+size():int
+addFirst(T): void
+addLast(T):void
+add(T):void
+remove(T): T remueve el primer elemento indicado y lo retorna
+removeAll(T): void remueve todos los elementos.
+boolean empty(): indica si la colección está vacía
+
+Crear la clase Main para probar cada método.
+No usar collection vistas en clase, deben trabajar con array de T, uds deben implementar la logica.
