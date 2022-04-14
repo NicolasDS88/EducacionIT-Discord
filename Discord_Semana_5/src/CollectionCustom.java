@@ -1,9 +1,12 @@
 
 public class CollectionCustom<T> {
 
-	T[] unArrayT = (T[]) new String[5];
 	
+	//T[] elements = new T[size]; //supuestamente pero es generic y tengo que saber
+	// Object[] genericArray = new Object[size]; 
+	private T[] unArrayT;
 	
+	unArrayT = (E[]) Array.newInstance(clazz, capacity);
 
 	/**
 	 * 
