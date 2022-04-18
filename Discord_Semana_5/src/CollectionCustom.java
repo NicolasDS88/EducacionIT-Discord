@@ -5,7 +5,7 @@ public class CollectionCustom<T> {
 	// T[] elements = new T[size]; //supuestamente pero es generic y tengo que saber
 	// Object[] genericArray = new Object[size];
 	T[] unArrayT;
-	
+	T unElemento;
 
 	/**
 	 * Constructor array will either give you back an Object array or result in
@@ -51,4 +51,41 @@ public class CollectionCustom<T> {
 
 	}
 
+	public void addLast(T elemento) {
+
+	}
+
+	public void add(T elemento) {
+
+	}
+	
+	/**
+	 * T remueve el primer elemento indicado y lo retorna
+	 *
+	 * @param elemento
+	 * @return
+	 */
+	public T remove(T elemento) {
+		T algo=(T) ""; 
+		return algo;
+	}
+	
+	
+	/**
+	 * remueve todos los elementos.
+	 * 
+	 */
+	public void removeAll() {
+		
+	} 
+	
+	
+	/**
+	 * indica si la colección está vacía
+	 * @return
+	 */
+	public boolean empty() {
+		return true;
+	} 
+	
 }
