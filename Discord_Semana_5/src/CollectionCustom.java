@@ -276,9 +276,9 @@ public class CollectionCustom<T> {
 	public boolean empty() {
 		// Acá tmb entra en ambiguedad ya que vacia que significa, que tengo elemento y
 		// son distintos de null?
-		boolean vacia = true;
+		boolean vacia=false;
 		if (0 == unArrayT.length) {
-
+			vacia = true;
 		} else {
 			for (int i = 0; i < unArrayT.length && vacia; i++) {
 				if (unArrayT[i] != null) {
