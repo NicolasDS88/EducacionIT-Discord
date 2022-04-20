@@ -3,7 +3,7 @@ import java.lang.reflect.Array;
 public class Generic_Array2<E> {  
     private E[] x;  
 
-    public Generic_Array2(Class<E[]> cla, int len) {  
+    public Generic_Array2(Class<E[]> cla, int len) {  //recibo por parametro un ARRAY de tipo E
         x = cla.cast(Array.newInstance(cla.getComponentType(), len));  
     }  
 

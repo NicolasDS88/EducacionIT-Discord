@@ -7,10 +7,10 @@ public class Generic_Array<E> {
 	public final int length;
 
 	// constructor class
-	public Generic_Array(Class<E> dataType, int length) {
+	public Generic_Array(Class<E> dataType, int length) { //recibo por parametro un valor y de ahi creo un Array de ese tipo de valor
 		// creatting a new array with the specified data type and length at runtime
 		// using reflection method.
-		this.objArray = (E[]) java.lang.reflect.Array.newInstance(dataType, length);
+		this.objArray = (E[]) java.lang.reflect.Array.newInstance(dataType, length); //pero recibo un Warning por que no se que valor viene
 		this.length = length;
 	}
 

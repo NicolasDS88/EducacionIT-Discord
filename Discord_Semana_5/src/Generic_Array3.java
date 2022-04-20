@@ -3,7 +3,7 @@ import java.util.Arrays;
 
 public class Generic_Array3<E> {
 
-	private final Object[] obj_array;
+	private final Object[] obj_array; // no deberia hacer un array de tipo Object nunca
 	public final int length;
 
 	// class constructor
