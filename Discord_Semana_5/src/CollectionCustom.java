@@ -1,6 +1,7 @@
 import java.lang.reflect.Array;
 import java.util.Arrays;
 
+
 public class CollectionCustom<T> {
 
 	// T[] elements = new T[size]; //supuestamente asi creo un Array normal, pero es
@@ -9,6 +10,7 @@ public class CollectionCustom<T> {
 	private T[] unArrayT;
 	private T unElementoDelArray; // <- solo para hacer un testeo
 	private int lenght;
+	//private int contadorAdd = 0;
 
 	/*--------------------CONSTRUCTORES USANDO REFLECTION----------------------------*/
 
@@ -84,6 +86,10 @@ public class CollectionCustom<T> {
 		unArrayT[i] = t;
 	}
 
+	// Esto es un poco debatible ya que no aclara si queremos agregar en la 1º
+	// posicion guardando lo que ya tiene o sobre escribiendo, yo desarrolle como si
+	// fuera una Queue desplasando el 1º elemento a la siguiente pos
+
 	/**
 	 * Agrega un elemento en la primera posicion siempre y cuando sea valido de lo
 	 * contrario no lo agrega.
@@ -91,22 +97,37 @@ public class CollectionCustom<T> {
 	 * @param elemento
 	 */
 	public void addFirst(T elemento) {
-		//chequeo que no sea null
+		// chequeo que no sea null
 		if (elemento != null) {
 			// chequeo que lo que quiero agregar sea del mismo tipo donde lo quiero
 			// "guardar"
-			if (unArrayT.getClass().equals(elemento.getClass())) {
+			if (elemento.getClass().equals(unArrayT.getClass().getComponentType())) {
 				if (unArrayT.length > 0) {
+					// Si es null asumo que no hay nada agregado a la 1º pos y lo sobre escribo
 					if (unArrayT[0] == null) {
-						unArrayT[0] = elemento;
+						set(0, elemento);
+						// unArrayT[0] = elemento;
+
 					} else {
+						// Caso contrario creo una copia y le agrego los valores PRE-existentes
 						T newArray[] = Arrays.copyOf(unArrayT, (unArrayT.length + 1));
+						// Aseguro de meter el primer elemento en 1º pos
+						newArray[0] = elemento;
+						// luego recorro el Array original agregando su contenido en el nuevo array
+						for (int i = 0; i < unArrayT.length; i++) {
+							newArray[i + 1] = unArrayT[i];
+
+						}
+						// finalmente lo convierto en el nuevo Array.
+						unArrayT = newArray;
 					}
 
-				}else {
-					//Esto es debatible, si el array existe pero el lenght es 0 creo uno nuevo para poder agregarlo
+				} else {
+					// Esto es debatible, si el array existe pero el lenght es 0 creo uno nuevo para
+					// poder agregarlo
 					T newArray[] = Arrays.copyOf(unArrayT, (unArrayT.length + 1));
-					this.unArrayT=newArray;
+					newArray[0] = elemento;
+					unArrayT = newArray;
 				}
 			}
 		}
@@ -114,11 +135,84 @@ public class CollectionCustom<T> {
 	}
 
 	public void addLast(T elemento) {
+		// chequeo que no sea null, en mi caso no quiero agregarlo, pero podria cambiar
+		// de ser necesario
+		if (elemento != null) {
+			// chequeo que lo que quiero agregar sea del mismo tipo donde lo quiero
+			// "guardar"
+			if (elemento.getClass().equals(unArrayT.getClass().getComponentType())) {
+				if (unArrayT.length > 0) {
+					// Veo el ULTIMO valor del Array
+					// Si es null asumo que no hay nada agregado a la ULTIMA pos y lo sobre escribo
+					if (unArrayT[unArrayT.length - 1] == null) {
+						set(unArrayT.length - 1, elemento);
+						// unArrayT[0] = elemento;
+
+					} else {
+						// Caso contrario creo una copia y le agrego los valores PRE-existentes
+						T newArray[] = Arrays.copyOf(unArrayT, (unArrayT.length + 1));
+						// Aseguro de meter el ULTIMO elemento en unArrayT.length ya que seria la ultima
+						// pos de mi nuevo array
+						// unArrayT{0,1,2,3} length 4 ---> newArray[unArrayT.lenght+1] --->
+						// {0,1,2,3,null} <- pos length
+						newArray[unArrayT.length] = elemento;
+						// luego recorro el Array original agregando su contenido en el nuevo array pero
+						// con el largo del original
+						for (int i = 0; i < unArrayT.length; i++) {
+							newArray[i] = unArrayT[i];
+
+						}
+						// finalmente lo convierto en el nuevo Array.
+						unArrayT = newArray;
+					}
+
+				} else {
+					// Esto es debatible, si el array existe pero el lenght es 0 creo uno nuevo para
+					// poder agregarlo y cumpliria ya que seria el 1º y Ultimo elemento
+					T newArray[] = Arrays.copyOf(unArrayT, (unArrayT.length + 1));
+					newArray[0] = elemento;
+					unArrayT = newArray;
+				}
+			}
+		}
 
 	}
 
+	/**
+	 * Este metodo sirve para cargar un Array cuando este vacio Agrega elementos en
+	 * la primera posicion disponible (=null) caso de estar lleno lo redimenciona y
+	 * llama al metodo addFirst o addLast
+	 * 
+	 * @param elemento
+	 */
 	public void add(T elemento) {
+		int auxContador = 0;
+		boolean agregado = false;
+		// chequeo que no sea null para ESTE ejemplo, quizas se pueda borrar
+		if (elemento != null) {
+			// chequeo que lo que quiero agregar sea del mismo tipo donde lo quiero
+			// "guardar"
+			if (elemento.getClass().equals(unArrayT.getClass().getComponentType())) {
+				do {
+					// minetras el aux sea menor al largo del array busco un lugar libre (=null)
+					if (auxContador < unArrayT.length) {
+						// pregunto si esa posicion es null
+						if (unArrayT[auxContador]==null) {
+							unArrayT[auxContador] = elemento;
+							agregado = true;
+						}
+							//para poder salir del loop cuando llego al tamaño del array lo agrego llamando
+					} else if (auxContador == unArrayT.length) {
+						// ya que no hay lugar diponibles lo pongo en alguna posicion ultima o primera
+						addLast(elemento);
+						// addFirst(elemento);
+						agregado = true; // para poder salir del loop
+					}
+					auxContador++;
 
+				} while (!agregado);
+			}
+		}
 	}
 
 	/**
@@ -128,7 +222,32 @@ public class CollectionCustom<T> {
 	 * @return
 	 */
 	public T remove(T elemento) {
-		T algo = (T) "";
+		T algo = null;
+		int auxIndex = 0;
+		// chequeo que no sea null
+		if (elemento != null) {
+			// chequeo que lo que quiero BUSCAR sea del mismo tipo donde lo quiero BUSCAR
+			if (elemento.getClass().equals(unArrayT.getClass().getComponentType())) {
+				// Hago una busqqueda con un For/While
+				for (int i = 0; i < unArrayT.length && !(algo == elemento); i++) {
+					if (unArrayT[i].equals(elemento)) {
+						// si son iguales lo asigno a la variable
+						algo = unArrayT[i];
+					}
+
+					auxIndex++;
+				}
+				if (algo.equals(elemento)) {
+					// significa que lo encontre entonces utilizo el aux para borrar lo que esta en
+					// esa pos
+					set(auxIndex, null);
+					// unArrayT[auxIndex]=null;
+
+				}
+
+			}
+		}
+
 		return algo;
 	}
 
@@ -137,16 +256,44 @@ public class CollectionCustom<T> {
 	 * 
 	 */
 	public void removeAll() {
+//Acá hay que definir un poco que es lo que hace el removeAll, pone a todos los elementos en Null o crea una lista de 0 length
 
+		// T newArray[] = Arrays.copyOf(unArrayT, 0);
+		// unArrayT = newArray;
+
+		// O podria hacer lo siguiente:
+		for (T t : unArrayT) {
+			t = null;
+		}
+		// mantiene el tamaño de la lista
 	}
 
 	/**
-	 * indica si la colección está vacía
+	 * Indica si la colección está vacía length == 0 y elementos != null
 	 * 
 	 * @return
 	 */
 	public boolean empty() {
-		return true;
+		// Acá tmb entra en ambiguedad ya que vacia que significa, que tengo elemento y
+		// son distintos de null?
+		boolean vacia = true;
+		if (0 == unArrayT.length) {
+
+		} else {
+			for (int i = 0; i < unArrayT.length && vacia; i++) {
+				if (unArrayT[i] != null) {
+					vacia = false;
+				}
+			}
+		}
+
+		return vacia;
+
 	}
+
+	 @Override
+	    public String toString() {
+	        return Arrays.toString(unArrayT);
+	    }
 
 }
