@@ -240,7 +240,7 @@ public class CollectionCustom<T> {
 				if (algo.equals(elemento)) {
 					// significa que lo encontre entonces utilizo el aux para borrar lo que esta en
 					// esa pos
-					set(auxIndex, null);
+					set(auxIndex-1, null);
 					// unArrayT[auxIndex]=null;
 
 				}
@@ -262,8 +262,8 @@ public class CollectionCustom<T> {
 		// unArrayT = newArray;
 
 		// O podria hacer lo siguiente:
-		for (T t : unArrayT) {
-			t = null;
+		for (int i = 0; i < unArrayT.length; i++) {
+			unArrayT[i]=null;
 		}
 		// mantiene el tamaño de la lista
 	}
@@ -291,9 +291,14 @@ public class CollectionCustom<T> {
 
 	}
 
-	 @Override
-	    public String toString() {
-	        return Arrays.toString(unArrayT);
-	    }
+	 //@Override
+	   // public String toStringggg() {
+	    //    return Arrays.toString(unArrayT);
+	    //}
+
+	@Override
+	public String toString() {
+		return "Lista Collection unArrayT de tipo="+unArrayT.getClass().getCanonicalName() +"\nCon su contenido: "+ Arrays.toString(unArrayT) ;
+	}
 
 }
