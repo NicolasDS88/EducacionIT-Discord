@@ -2,6 +2,11 @@ package clase19;
 
 import java.util.Scanner;
 
+import Discord_Semana_6.cantDeleteException;
+import Discord_Semana_6.cantGetValueException;
+import Discord_Semana_6.cantListAllException;
+import Discord_Semana_6.cantSaveException;
+import Discord_Semana_6.cantUpdateException;
 import clase10.Libro;
 import clase7.Articulo;
 
@@ -25,15 +30,41 @@ public class MainMap {
 		Articulo articulo = contruirArticulo();
 		
 		//ejecuto
-		InMemoryDB.listAll();
+		try {
+			InMemoryDB.listAll();
+		} catch (cantListAllException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		
-		accion.exec(articulo);
+		try {
+			accion.exec(articulo);
+		} catch (cantGetValueException | cantDeleteException | cantListAllException | cantSaveException
+				| cantUpdateException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
 		
-		InMemoryDB.listAll();
+		try {
+			InMemoryDB.listAll();
+		} catch (cantListAllException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		
-		InMemoryDB.delete(articulo.getId());
+		try {
+			InMemoryDB.delete(articulo.getId());
+		} catch (cantDeleteException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		
-		InMemoryDB.listAll();
+		try {
+			InMemoryDB.listAll();
+		} catch (cantListAllException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
 	private static Articulo contruirArticulo() {
