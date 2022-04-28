@@ -1,4 +1,4 @@
-package Discord_Semana_6;
+package packException;
 
 public class cantSaveException extends Exception {
 	public cantSaveException() {}

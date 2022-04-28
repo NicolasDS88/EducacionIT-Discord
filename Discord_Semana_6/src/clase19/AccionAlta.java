@@ -1,7 +1,7 @@
 package clase19;
 
-import Discord_Semana_6.cantSaveException;
 import clase7.Articulo;
+import packException.cantSaveException;
 
 public class AccionAlta implements IAccion {
 

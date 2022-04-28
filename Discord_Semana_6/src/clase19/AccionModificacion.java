@@ -1,8 +1,8 @@
 package clase19;
 
-import Discord_Semana_6.cantGetValueException;
-import Discord_Semana_6.cantUpdateException;
 import clase7.Articulo;
+import packException.cantGetValueException;
+import packException.cantUpdateException;
 
 public class AccionModificacion implements IAccion {
 

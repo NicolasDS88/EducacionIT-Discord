@@ -1,7 +1,7 @@
 package clase19;
 
-import Discord_Semana_6.cantDeleteException;
 import clase7.Articulo;
+import packException.cantDeleteException;
 
 public class AccionBaja implements IAccion {
 	
