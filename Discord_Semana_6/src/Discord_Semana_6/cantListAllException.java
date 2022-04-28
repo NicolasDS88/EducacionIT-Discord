@@ -1,7 +1,10 @@
 package Discord_Semana_6;
 
 public class cantListAllException extends Exception {
-	
+	public cantListAllException() {}
+	public cantListAllException(String msjError) {
+		super(msjError);
+	}
 	/* * @throws ClassCastException if the key is of an inappropriate type for
      *         this map
      * (<a href="{@docRoot}/java.base/java/util/Collection.html#optional-restrictions">optional</a>)

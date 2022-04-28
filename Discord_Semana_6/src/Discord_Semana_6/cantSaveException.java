@@ -1,7 +1,10 @@
 package Discord_Semana_6;
 
 public class cantSaveException extends Exception {
-	
+	public cantSaveException() {}
+	public cantSaveException(String msjError) {
+		super(msjError);
+	}
 	/*     
 	 * @throws UnsupportedOperationException if the {@code put} operation
      *         is not supported by this map

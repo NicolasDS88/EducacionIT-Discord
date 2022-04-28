@@ -1,7 +1,10 @@
 package Discord_Semana_6;
 
 public class cantDeleteException extends Exception {
-	
+	public cantDeleteException () {}
+	public cantDeleteException (String msjError) {
+		super(msjError);
+	}
 	/* @throws UnsupportedOperationException if the {@code remove} operation
      *         is not supported by this map
      * @throws ClassCastException if the key is of an inappropriate type for

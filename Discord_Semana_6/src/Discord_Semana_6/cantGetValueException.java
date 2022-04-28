@@ -1,7 +1,10 @@
 package Discord_Semana_6;
 
 public class cantGetValueException extends Exception {
-	
+	public cantGetValueException() {}
+	public cantGetValueException(String msjError) {
+		super(msjError);
+	}
 	/*
 	 * @throws ClassCastException if the key is of an inappropriate type for
      *         this map

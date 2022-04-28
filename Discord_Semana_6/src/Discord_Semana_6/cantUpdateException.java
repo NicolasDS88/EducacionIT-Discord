@@ -1,7 +1,10 @@
 package Discord_Semana_6;
 
 public class cantUpdateException extends Exception {
-	
+	public cantUpdateException() {}
+	public cantUpdateException(String msjError) {
+		super(msjError);
+	}
 	
 	/*
 	 * @throws UnsupportedOperationException if the {@code put} operation
