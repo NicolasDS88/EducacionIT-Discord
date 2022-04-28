@@ -32,10 +32,12 @@ public class MainMap {
 		//ejecuto
 		try {
 			InMemoryDB.listAll();
-		} catch (cantListAllException e) {
+		} catch (NullPointerException e) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+			e.printStackTrace();					
+		} catch (ClassCastException e) {
+			
+		} catch (cantListAllException e) {}
 		
 		try {
 			accion.exec(articulo);
@@ -47,6 +49,11 @@ public class MainMap {
 		
 		try {
 			InMemoryDB.listAll();
+		} catch (NullPointerException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();					
+		} catch (ClassCastException e) {
+			
 		} catch (cantListAllException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -54,6 +61,15 @@ public class MainMap {
 		
 		try {
 			InMemoryDB.delete(articulo.getId());
+		} catch (UnsupportedOperationException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (ClassCastException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (NullPointerException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		} catch (cantDeleteException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

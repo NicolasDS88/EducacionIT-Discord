@@ -1,5 +1,4 @@
 package clase19;
-
 import clase7.Articulo;
 import packException.cantDeleteException;
 import packException.cantGetValueException;
