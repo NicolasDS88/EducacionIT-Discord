@@ -1,0 +1,49 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>EducacionIt-Discord</groupId>
+    <artifactId>EducacionIt-Discord-Ejercicio-Eemanal-24062022</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
+  </parent>
+  <artifactId>discord-services</artifactId>
+  
+  <dependencies>
+  	<dependency>
+  		<groupId>ar.com.educacionit</groupId>
+  		<artifactId>app-daos</artifactId>
+  		<version>1.0.0-SNAPSHOT</version>
+  		<!-- 
+  		<exclusions>
+  			<exclusion>
+  				<groupId>mysql</groupId>
+	    		<artifactId>mysql-connector-java</artifactId>
+  			</exclusion>
+  		</exclusions>
+  		-->
+  	</dependency>
+  	<!-- https://mvnrepository.com/artifact/org.junit.jupiter/junit-jupiter-api -->
+	<dependency>
+		<groupId>org.junit.jupiter</groupId>
+		<artifactId>junit-jupiter-engine</artifactId>
+		<version>${junit.jupiter.version}</version>
+		<scope>test</scope>
+	</dependency>
+	<dependency>
+		<groupId>org.junit.platform</groupId>
+		<artifactId>junit-platform-runner</artifactId>
+		<version>${junit.platform.version}</version>
+		<scope>test</scope>
+	</dependency>
+	
+	<!-- apache poi -->
+	<!-- https://mvnrepository.com/artifact/org.apache.poi/poi-ooxml -->
+	<dependency>
+	    <groupId>org.apache.poi</groupId>
+	    <artifactId>poi-ooxml</artifactId>
+	    <version>5.2.2</version>
+	</dependency>
+	
+  </dependencies>
+  
+  
+</project>

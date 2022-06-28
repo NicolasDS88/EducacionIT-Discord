@@ -1,0 +1,28 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>EducacionIt-Discord</groupId>
+	<artifactId>EducacionIt-Discord-Ejercicio-Eemanal-24062022</artifactId>
+	<version>1.0.0-SNAPSHOT</version>
+	<packaging>pom</packaging>
+	<name>ejercicio-semanal-24062022</name>
+	<description>Ejercicios que da el profe</description>
+
+
+	<!-- defino variable -->
+	<properties>
+		<maven.compiler.source>11</maven.compiler.source>
+		<maven.compiler.target>11</maven.compiler.target>
+		<junit.jupiter.version>5.5.2</junit.jupiter.version>
+		<junit.platform.version>1.5.2</junit.platform.version>
+	</properties>
+
+
+	<modules>
+		<module>discord-daos</module>
+		<module>discord-domain</module>
+		<module>discord-services</module>
+		<module>discord-web</module>
+	</modules>
+
+
+</project>
