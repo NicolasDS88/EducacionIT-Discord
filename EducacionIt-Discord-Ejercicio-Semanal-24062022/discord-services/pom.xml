@@ -9,8 +9,8 @@
   
   <dependencies>
   	<dependency>
-  		<groupId>ar.com.educacionit</groupId>
-  		<artifactId>app-daos</artifactId>
+  		<groupId>EducacionIt-Discord</groupId>
+  		<artifactId>discord-daos</artifactId>
   		<version>1.0.0-SNAPSHOT</version>
   		<!-- 
   		<exclusions>
