@@ -1,14 +1,13 @@
 import React from 'react'
-//import {Link} from 'react-router-dom'
+import {Link} from 'react-router-dom'
 
 const Navbar = () => {
     return (
-        <div>
-            <h1>Nav Bar</h1>
-            <nav className="navbar navbar-expand-lg navbar-light bg-light">
-                <div className="container-fluid">
-                    <a className="navbar-brand" href="#">Navbar</a>
-                    <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <div>            
+            <nav className="">
+                <div className="container">
+                    <a className="navbarNav" href="#">Navbar</a>
+                    <button className="navbar">
                         Titulo
                         <span className="navbar-toggler-icon"></span>
                     </button>
